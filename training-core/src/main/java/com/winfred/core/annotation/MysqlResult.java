@@ -10,9 +10,9 @@ import java.lang.annotation.*;
 @Target({ElementType.FIELD, ElementType.METHOD})
 public @interface MysqlResult {
 
-    String column() default "";
+  String column() default "";
 
-    boolean unique() default false;
+  boolean unique() default false;
 
-    String property() default "";
+  String property() default "";
 }

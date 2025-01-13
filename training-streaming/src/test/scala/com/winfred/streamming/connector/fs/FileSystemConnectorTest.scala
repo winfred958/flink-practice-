@@ -6,7 +6,6 @@ import com.winfred.core.utils.ArgsHandler
 import com.winfred.streamming.connector.fs.FileSystemConnector.LogEntity
 import org.apache.commons.lang3.StringUtils
 import org.apache.flink.api.common.functions.MapFunction
-import org.apache.flink.streaming.api.functions.sink.SinkFunction
 import org.apache.flink.streaming.api.functions.timestamps.AscendingTimestampExtractor
 import org.apache.flink.streaming.api.scala.StreamExecutionEnvironment
 import org.apache.flink.streaming.api.{CheckpointingMode, TimeCharacteristic}
@@ -39,8 +38,8 @@ object FileSystemConnectorTest {
       .flatMap(x => {
         for (i <- x.split("\n").toList) yield i
       }).filter(x => {
-      StringUtils.isNotBlank(x)
-    })
+        StringUtils.isNotBlank(x)
+      })
       .assignTimestampsAndWatermarks(new AscendingTimestampExtractor[String]() {
         override def extractAscendingTimestamp(element: String): Long = {
           return System.currentTimeMillis();

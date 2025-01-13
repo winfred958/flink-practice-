@@ -2,7 +2,6 @@ package com.winfred.core.source
 
 import com.winfred.core.config.KafkaConfig
 import org.apache.flink.api.common.serialization.SimpleStringSchema
-import org.apache.flink.connector.kafka.sink.KafkaSink
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer
 import org.apache.kafka.clients.consumer.ConsumerConfig
 import org.apache.kafka.common.serialization.StringDeserializer

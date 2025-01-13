@@ -8,8 +8,8 @@ import java.util.List;
 @Getter
 @Setter
 public class UserInfo {
-    private String userId;
-    private String userName;
-    private Boolean isLogin;
-    private List<UserRole> userRoles;
+  private String userId;
+  private String userName;
+  private Boolean isLogin;
+  private List<UserRole> userRoles;
 }

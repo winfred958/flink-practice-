@@ -11,7 +11,7 @@ import java.lang.annotation.*;
 @Inherited
 public @interface MysqlTableName {
 
-    String name() default "";
+  String name() default "";
 
-    String sql() default "";
+  String sql() default "";
 }

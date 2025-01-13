@@ -1,8 +1,7 @@
 package com.winfred.training.hive
 
 import com.winfred.core.utils.ArgsHandler
-import org.apache.flink.table.api.{EnvironmentSettings, Table, TableEnvironment}
-import org.apache.flink.table.catalog.hive.HiveCatalog
+import org.apache.flink.table.api.EnvironmentSettings
 
 object FlinkHiveTest {
 
@@ -13,8 +12,8 @@ object FlinkHiveTest {
       .inBatchMode()
       .build()
 
-//    val tableEnv = TableEnvironment
-//      .create(settings)
+    //    val tableEnv = TableEnvironment
+    //      .create(settings)
 
     var databaseName = ArgsHandler.getArgsParam(args, "database-name")
     if (databaseName == null) {
@@ -36,19 +35,19 @@ object FlinkHiveTest {
     println(s"databaseName=${databaseName}")
 
 
-//    val hiveCatalog = new HiveCatalog(catalogName, databaseName, hiveConfigDir)
-//    tableEnv.registerCatalog(catalogName, hiveCatalog)
-//    tableEnv.useCatalog(catalogName)
-//
-//
-//    val table: Table = tableEnv
-//      .sqlQuery(
-//        s"""
-//           | SELECT * FROM ${catalogName} LIMIT 10
-//           |""".stripMargin)
-//
-//    val tableResult = table.execute()
-//
-//    tableResult.print()
+    //    val hiveCatalog = new HiveCatalog(catalogName, databaseName, hiveConfigDir)
+    //    tableEnv.registerCatalog(catalogName, hiveCatalog)
+    //    tableEnv.useCatalog(catalogName)
+    //
+    //
+    //    val table: Table = tableEnv
+    //      .sqlQuery(
+    //        s"""
+    //           | SELECT * FROM ${catalogName} LIMIT 10
+    //           |""".stripMargin)
+    //
+    //    val tableResult = table.execute()
+    //
+    //    tableResult.print()
   }
 }

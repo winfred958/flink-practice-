@@ -10,5 +10,5 @@ import java.lang.annotation.*;
 @Target({ElementType.FIELD, ElementType.METHOD})
 public @interface MysqlID {
 
-    String column() default "id";
+  String column() default "id";
 }
