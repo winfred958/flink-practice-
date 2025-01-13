@@ -2,7 +2,6 @@ package com.winfred.core.sink
 
 import com.winfred.core.config.KafkaConfig
 import org.apache.flink.api.common.serialization.SimpleStringSchema
-import org.apache.flink.connector.kafka.sink.{KafkaRecordSerializationSchema, KafkaSink}
 import org.apache.kafka.clients.producer.ProducerConfig
 import org.apache.kafka.common.serialization.StringSerializer
 
@@ -36,12 +35,5 @@ object FlinkKafkaSink {
       .setKafkaProducerConfig(properties)
       .build()
     sink
-  }
-
-  def main(args: Array[String]): Unit = {
-    println(classOf[StringSerializer].getCanonicalName)
-
-    val obj = FlinkKafkaSink.getKafkaSink("ttt")
-    println(obj)
   }
 }
